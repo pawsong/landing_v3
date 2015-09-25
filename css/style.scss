@@ -1,0 +1,515 @@
+@import "_common.scss";
+html { -webkit-font-smoothing: antialiased; }
+* { font-family: 'Nanum Barun Gothic', sans-serif; }
+body { background: #F1F1F1; }
+p, a { letter-spacing: -0.05em; }
+.eng { letter-spacing: 0 !important; }
+.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
+
+#wrap_head {
+	position: absolute;
+	display: inline-block;
+	width: 100%;
+	bottom: 0;
+}
+header {
+	background: url("../img/bg_header.jpg") no-repeat center;
+	background-size: cover;
+	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+	height: 100%;
+	position: relative;
+	overflow: hidden;
+	.header-box {
+		background: #FF5A5A;
+		padding-top: 4em;
+		margin-top: -.375em;
+		position: relative;
+		z-index: 20;
+	}
+	.phrase { 
+		text-align: center;
+		img {
+			-webkit-animation-duration: 1.75s;
+			-webkit-animation-delay: .4s;
+		}
+		p {
+			color: white;
+			-webkit-animation-duration: 1.75s;
+			-webkit-animation-delay: .9s;
+		}
+	}
+	.btn_down {
+		text-align: center;
+		margin-top: 3em;
+		a {
+			display: inline-block;
+			width: 10.5em;
+			padding: 1em 0;
+			border: 2px solid white;
+			border-radius: 6px;
+			text-align: center;
+			-webkit-animation-duration: 1.75s;
+			-webkit-animation-delay: 1.15s;
+			-webkit-animation-fill-mode: backwards;
+			animation-fill-mode: backwards;
+			transition: all 0.4s ease;
+			img {
+				width: 26px;
+				vertical-align: middle;
+				margin: 0 .4em 0 -.375em;
+			}
+			span {
+				color: white;
+				font-weight: bold;
+				font-size: 1.125em;
+			}
+			&:first-child {	margin-right: 1.25em; }
+			&:active { transform: scale(0.98); }
+			&:hover {
+				background-color: rgba(255, 255, 255, 0.2);
+				border-color: transparent;
+				transform: translateY(3px);
+			}
+		}
+		.mobile { display: none; }
+	}
+	.device { 
+		text-align: center; 
+		img {
+			vertical-align: bottom;
+			-webkit-animation-duration: 1s;
+		}
+		.android { -webkit-animation-delay: .35s; }
+		.ios { -webkit-animation-delay: .15s; }
+	}
+	.ic_arrow_down {
+		width: 2.5em;
+		text-align: center;
+		margin: 0 auto;
+		padding: 2.25em;
+		cursor: pointer;
+		-webkit-animation-delay: 1.75s;
+		-webkit-animation-fill-mode: backwards;
+		animation-fill-mode: backwards;
+		transition: all 0.4s ease;
+		&:hover {
+			transform: translateY(5px);
+		}
+	}
+}
+
+#features {
+	margin: .625em auto;
+	> div {
+		background: white;
+		box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+		border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+		margin: .625em 0;
+		display: inline-block;
+		width: 100%;
+		clear: both;
+		overflow: hidden;
+		position: relative;
+		> div {
+			position: relative;
+			> img:first-child {
+				width: 100%;
+				height: auto;
+			}
+			.pc {
+				position: absolute;
+				top: 0;
+				height: 100%;
+			}
+			.mobile {
+				position: absolute;
+				left: 0;
+				bottom: 0;
+				width: 100%;
+			}
+		}
+	}
+	.bg_left {
+		float: left;
+		text-align: right;
+		.pc { right: 0; }
+	}
+	.bg_right {
+		float: right;
+		text-align: left;
+		.pc { left: 0; }
+	}
+	.description {
+		h3 {
+			color: #FF5A5A;
+			font-size: 2.5em;
+			font-weight: normal;
+			letter-spacing: -0.05em;
+		}
+		div {
+			width: 2em;
+			height: 0.25em;
+			background: #FF5A5A;
+			margin: 2.25em 0;
+			display: inline-block;
+		}
+		p {
+			font-size: 1.375em;
+			color: #333;
+			line-height: 1.5em;
+		}
+	}
+}
+
+@-webkit-keyframes backgroundScroll {
+	from 	{ background-position: 0 0; }
+	to 		{ background-position: 0 -32em; }
+}
+@keyframes backgroundScroll {
+	from 	{ background-position: 0 0; }
+	to 		{ background-position: 0 -32em; }
+}
+#reviews {
+	background: url("../img/bg_insta_pc.jpg");
+	background-size: auto 32em;
+	-webkit-animation: backgroundScroll 15s linear infinite;
+	animation: backgroundScroll 15s linear infinite;
+	position: relative;
+	height: 32em;
+	overflow: hidden;
+	.dim {
+		transition: all 0.6s ease;
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		background: black;
+		opacity: 0.6;
+		z-index: 0;
+	}
+	.photofrom {
+		font-family: 'Varela', sans-serif;
+		font-size: .625em;
+		color: rgba(255, 255, 255, 0.5);
+		position: absolute;
+		bottom: 2em;
+		right: 2em;
+		letter-spacing: .05em;
+		z-index: 1;
+		&:hover { text-decoration: underline; }
+	}
+}
+
+.wrap_quote {
+	z-index: 2;
+	position: absolute;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+	width: 100%;
+	.quote {
+		opacity: .75;
+		text-align: center;
+		color: white;
+		margin: auto;
+		transition: all 0.15s ease;
+		.quotemark { width: 3em; }
+		span { opacity: .6; }
+		p {
+			letter-spacing: -.02em;
+			line-height: 1.375em;
+			font-size: 2em;
+			margin-top: .875em;
+		}
+		.google, .apple {
+			height: 1.5em;
+			padding: .5em .25em .375em 1.75em;
+			font-weight: bold;
+			background: no-repeat left center;
+			background-size: 1.25em;
+		}
+		.google	{ background-image: url("../img/ic_down_google.svg"); }
+		.apple	{ background-image: url("../img/ic_down_apple.svg"); }
+		.date {
+			font-size: .75em;
+			font-family: 'Varela', sans-serif;
+		}
+	}
+	.stars {
+		transition: all 0.2s ease;
+		width: 18em;
+		display: block;
+		margin: 1.5em auto 2em;
+	}
+}
+
+footer {
+	background: url("../img/img_map_footer.png") no-repeat center;
+	background-size: cover;
+	color: white;
+	padding: 2.875em 1em 2.5em;
+	text-align: center;
+	* {
+		color: white;
+		transition: all 0.2s ease;
+		letter-spacing: 1;
+		font-family: 'Varela', sans-serif;
+	}
+	h3 {
+		margin: 0.375em 0 0.875em;
+		font-size: 1.5em;
+	}
+	.who_we_are p {
+		font-size: 0.75em;
+		margin-top: 1.25em;
+	}
+}
+
+.ic_social a {
+	display: inline-block;
+	margin: 0.25em;
+	padding: 1em;
+	border: 2px solid white;
+	border-radius: 6px;
+	img {
+		width: 27px;
+		height: 24px;
+	}
+	&:hover {
+		border-color: transparent;
+		transform: translateY(3px);
+	}
+	&:active { transform: scale(0.98); }
+}
+.ic_fb:active, .ic_fb:hover			{ background: #3c599f; }
+.ic_insta:active, .ic_insta:hover	{ background: #2a5b83; }
+.ic_mail:active, .ic_mail:hover		{ background: #ff6969; }
+
+.ic_ci img {
+	width: 10.5em;
+	margin-top: 0.5em;
+	&:hover {
+		opacity: .8;
+		transform: translateY(3px);
+	}
+	&:active { transform: scale(0.98); }
+}
+
+.copyright p {
+	font-size: .75em;
+	margin-bottom: .5em;
+	opacity: 0.5;
+}
+
+.row {
+	display: inline-block;
+	width: 100%;
+	margin-bottom: .625em;
+}
+
+/*======================MEDIA QUERY======================*/
+
+/* mobile */
+@media screen and (max-width: 603px) {
+	header {
+		max-height: 16em;
+		background: #FF5A5A;
+		.btn_down {
+			margin-top: 2em;
+			.pc {
+				display: none;
+			}
+			.mobile {
+				display: inline-block;
+			}
+			a {
+				width: 80%;
+				padding: 18px;
+			}
+			.a:first-child {
+				margin-right: 0;
+				margin-bottom: 10px;
+			}
+		}
+		.header-box {
+			padding: 2em 0 1em;
+		}
+	}
+
+	.ic_arrow_down {
+		display: none;
+	}
+
+	.phrase {
+		padding: 0 5%;
+		p {
+			margin-top: 1.5em;
+			font-size: 1.125em;
+		}
+		img {
+			width: 100%;
+			max-width: 310px;
+		}
+	}
+
+	.device { display: none; }
+
+	#features .description { 
+		h3 { font-size: 2em;}
+		p { font-size: 1.25em;}
+	}
+
+	@-webkit-keyframes backgroundScroll {
+		from 	{ background-position: 0 0; }
+		to 		{ background-position: 0 333%; }
+	}
+	@keyframes backgroundScroll {
+		from 	{ background-position: 0 0; }
+		to 		{ background-position: 0 333%; }
+	}
+	#reviews {
+		height: 30em;
+		background: url("../img/bg_insta_mobile.jpg") center;
+		background-size: cover;
+		-webkit-animation: backgroundScroll 80s linear infinite;
+		animation: backgroundScroll 80s linear infinite;
+	}
+
+	.wrap_quote {
+		.quote {
+			opacity: .9;
+			padding: 1.825em;
+			.quotemark { width: 2.5em; }
+			.mobile { display: block; }
+			.pc 	{ display: none; }
+			p 		{ font-size: 1.375em; }
+		}
+		.stars {
+			width: 10em;
+			margin: .75em auto 1.25em;
+		}
+	}
+}
+
+/* tablet & mobile */
+@media screen and (max-width: 1180px) {
+	#features {
+		> div > div {
+			float: none;
+			text-align: center;
+			width: 100%;
+		}
+		.description {
+			margin-bottom: 2.5em;
+			h3 { margin-top: 60vw; }
+			div {
+				width: 1.5em;
+				margin: 1.75em;
+			}
+		}
+		.bg 	{ width: 100%; }
+		.pc 	{ display: none; }
+		.mobile { display: inline; }
+	}
+
+	footer {
+		padding: .75em 0 1.25em;
+		h3 { display: none; }
+		.who_we_are p:first-child { display: none; }
+	}
+	.row div { margin: 1em 0; }
+}
+
+/* tablet */
+@media (min-width: 604px) and (max-width: 1180px) {
+	header {
+		min-height: 56em;
+		max-height: 56em;
+		.device img {
+			width: 48vw;
+			max-width: 26em;
+		}
+	}
+	.phrase p {
+		margin-top: 1.75em;
+		font-size: 1.375em;
+	}
+	.device .ios {
+		margin-left: -11vw;
+	}
+
+	.wrap_quote .quote {
+		width: 80vw;
+		p {	font-size: 1.625em;	}
+	}
+
+}
+
+/* pc and mac */
+@media screen and (min-width: 1180px) {
+	header { min-height: 940px; }
+
+	.phrase p {
+		margin-top: 1.75em;
+		font-size: 1.375em;
+	}
+
+	.device {
+		img {
+			height: 53vh;
+			min-height: 32em;
+		}
+		.device .ios { margin-left: -12vh; }
+	}
+	#features {
+		> div > div:first-child {
+			width: 63%;
+		}
+		.bg_right + .description {
+			text-align: right;
+			right: 66%;
+		}
+		.bg_left + .description {
+			left: 66%;
+		}
+		.description {
+			position: absolute;
+			top: 27%;
+		}
+	}
+
+	.wrap_quote .quote { width: 54vw; }
+
+	#reviews:hover {
+		.dim {
+			opacity: .8;
+		}
+		.wrap_quote .quote {
+			transform: scale(0.96);
+			opacity: .9;
+			.stars { transform: scale(1.25); }
+		}
+	}
+
+	footer {
+		clear: both;
+		.row div {
+			width: 33.3333333333%;
+			float: left;
+		}
+		.container {
+			margin: 0 auto;
+			max-width: 1280px;
+		}
+	}
+}
+/* @media (min-width: 1280px) and (max-width: 1919px) {
+}
+
+@media screen and (min-width: 1920px) {
+}*/
+.hidden {
+	visibility: hidden;
+}

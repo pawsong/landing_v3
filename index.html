@@ -1,0 +1,152 @@
+<html ng-app="myApp">
+<head>
+	<meta http-equiv="Content-Type" content="text/html, charset=UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<link rel="stylesheet" type="text/css" href="css/animate.min.css" />
+	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.3.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
+	<script type="text/javascript" src="js/parallax.js"></script>
+	<script type="text/javascript" src="js/smooth.js"></script>
+	<script type="text/javascript" src="js/ui-bootstrap.js"></script>
+	<script type="text/javascript" src="js/reviews.js"></script>
+
+</head>
+<body>
+	<header id="tothetop" parallax-background parallax-ratio="0.6">
+		<div id="wrap_head">
+		<div class="device" parallax parallax-ratio=".85"  parallax-vertical-offset=".1" parallax-horizontal-offset=".1">
+			<img class="android animated fadeInUp" src="img/img_device_android.png">
+			<img class="ios animated fadeInUp" src="img/img_device_ios.png">
+		</div>
+		<div class="header-box">
+			<div class="phrase">
+				<img src="img/phrase_ko.svg" class="animated fadeInDown">
+				<p class="animated fadeInDown">지금, 사랑하는 사람과 함께 하세요.</p>
+			</div>
+			<div class="btn_down">
+				<a class="animated fadeInDown pc" href="http://install.couplete.me" target="_blank">
+					<img src="img/ic_down_google.svg">
+					<span>구글 플레이</span>
+				</a>
+				<a class="animated fadeInDown pc" href="http://install.couplete.me" target="_blank">
+					<img src="img/ic_down_apple.svg">
+					<span>애플 앱스토어</span>
+				</a>
+				<a class="animated fadeInDown mobile" href="http://install.couplete.me" target="_blank">
+					<img src="img/ic_down_apple.svg">
+					<span>애플 앱스토어</span>
+				</a>
+			</div>
+			<div class="animated fadeInDown ic_arrow_down" scroll-to="features">
+				<img src="img/ic_arrow_down.svg">
+			</div>
+		</div>
+		</div>
+	</header>
+	
+	<section id="features">
+		<div class="timeline">
+			<div class="bg_left">
+				<img class="bg" src="img/bg_feature_timeline.jpg">	
+				<img class="pc" src="img/bg_gradient_left.png">
+				<img class="mobile" src="img/bg_gradient_top.png">
+			</div>
+			<div class="description">
+				<h3>추억을 담는 공간<br><b>커플 타임라인</b></h3>
+				<div></div>
+				<p>디데이 자동 계산에 사진 앨범까지<br>필수 기능이 알차게 모인 공간</p>
+			</div>
+		</div>
+		<div class="chat">
+			<div class="bg_right">
+				<img class="bg" src="img/bg_feature_chat.jpg">	
+				<img class="pc" src="img/bg_gradient_right.png">
+				<img class="mobile" src="img/bg_gradient_top.png">
+			</div>
+			<div class="description">
+				<h3>쉿! 아무도 못 봐<br><b>우리 커플 전용 채팅</b></h3>
+				<div></div>
+				<p>커플의 특권이란 바로 이런 것<br>오직 두 사람만을 위한 메신저</p>
+			</div>
+		</div>
+		<div class="wishbox">
+			<div class="bg_left">
+				<img class="bg" src="img/bg_feature_wishbox.jpg">	
+				<img class="pc" src="img/bg_gradient_left.png">
+				<img class="mobile" src="img/bg_gradient_top.png">
+			</div>
+			<div class="description">
+				<h3>뭐든 함께 하고파<br><b>커플 버킷리스트</b></h3>
+				<div></div>
+				<p>맛집, 영화, 여행, 애정표현 등<br>같이 하고 싶은 것 마구 담기</p>
+			</div>
+		</div>
+		<div class="loveletter">
+			<div class="bg_right">
+				<img class="bg" src="img/bg_feature_loveletter.jpg">	
+				<img class="pc" src="img/bg_gradient_right.png">
+				<img class="mobile" src="img/bg_gradient_top.png">
+			</div>
+			<div class="description">
+				<h3>로맨스가 필요할 땐<br><b>두근두근 러브레터</b></h3>
+				<div></div>
+				<p>디데이 자동 계산에 사진 앨범까지<br>필수 기능이 알차게 모인 공간</p>
+			</div>
+		</div>
+		<div class="calendar">
+			<div class="bg_left">
+				<img class="bg" src="img/bg_feature_calendar.jpg">	
+				<img class="pc" src="img/bg_gradient_left.png">
+				<img class="mobile" src="img/bg_gradient_top.png">
+			</div>
+			<div class="description">
+				<h3>센스있게 챙기는<br><b>사랑의 캘린더</b></h3>
+				<div></div>
+				<p>우리끼리 일정 공유는 기본<br>마법의 그날까지 챙기는 센스</p>
+			</div>
+		</div>
+	</section>
+
+
+	<section id="reviews">
+		<div class="dim"></div>
+		<div class="wrap_quote" ng-controller="reviewController as reviewctrl">
+			<div class="quote" ng-repeat="quote in reviewctrl.quotes">
+				<img class="quotemark" src="img/ic_quotes.svg">
+				<p>{{quote.says}}</p>
+				<img class="stars" src="img/img_review_stars_5.svg">
+				<span class="{{quote.market}}">{{quote.name}}</span>
+				<span class="date">{{quote.date}}</span>
+			</div>
+		</div>
+		<a href="https://instagram.com/explore/tags/couplete" target="_blank"> <span class="photofrom">photos from instagram <b>#couplete</b></span></a>
+	</section>
+
+	<footer>
+		<div class="container">
+			<div class="row">
+				<div>
+					<h3>CONTACT US</h3>
+					<p class="ic_social">
+						<a target="_blank" class="ic_fb" alt="" href="https://www.facebook.com/couplete"><img src="img/ic_fb.png"></a>
+						<a class="ic_mail" href="mailto:helpdesk@wonderabbit.com"><img src="img/ic_mail.png"></a>
+						<a target="_blank" class="ic_insta" alt="" href="https://instagram.com/couplete_app"><img src="img/ic_fb.png"></a>
+					</p>
+				</div>
+				<div class="ic_ci" scroll-to="tothetop" duration="2000" >
+					<a href="http://couplete.me"><img src="img/logo_wonder.png"></a>
+				</div>
+				<div class="who_we_are">
+					<p>Wonderabbit.Inc</p>
+					<p>helpdesk@wonderabbit.com</p>
+					<p><!-- R07, 8F, Pangyo Public Support Center, -->Pangyo Techno Valley, Sampyeong-dong,<br>Bundang-gu, Seongnam-si, Gyeonggi-do, Korea</p>
+				</div>
+			</div>
+			<div class="copyright"><p>Copyright © 2013 Wonderabbit Inc. All rights reserved.</p></div>
+		</div>
+	</footer>
+</body>
+</html>

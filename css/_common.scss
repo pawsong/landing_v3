@@ -1,0 +1,59 @@
+/* COLORS */
+$grayLight:	#e6e6e6;
+$gray:		#b7b7b7;
+$mook:		#333;
+$charcoal:	#676767;
+$theme:		#FF5A5A;
+
+
+/* MIXINS @include */
+@mixin size($width, $height:$width) {
+	width: $width;
+	height: $height;
+}
+@mixin border-b($color-code:$grayLight, $border-width:1px) {
+	border-bottom: $color-code solid $border-width;
+}
+@mixin position($position:absolute, $top:0, $left:0) {
+	position: $position;
+	top: $top;
+	left: $left;
+}
+@mixin transition($sec:0.4s) {
+	transition: all $sec ease;
+}
+@mixin alpha-black($opacity:0.7) {
+	background: rgba(0,0,0,$opacity)
+}
+
+/* INHERITANCES @extend */
+
+
+/* !!!!! R E S E T !!!!! */
+* {
+	outline: none !important; 
+	-webkit-tap-highlight-color:rgba(0,0,0,0);
+} 
+body, div, ul, ol, li, h1, h2, h3, h4, h5, h6, form, fieldset, input, p, span, th, td, img, a {
+	margin: 0; 
+	padding: 0; 
+	border: 0; 
+	// color: $mook;
+}
+ul, ul li {
+	list-style: none;
+}
+body {
+	width: 100%;
+}
+a {
+	img {
+		border: 0;
+	}
+	&:link, &:visited {
+		text-decoration: none; 
+	}
+}
+.ui-collapsible-heading-status, .ui-collapsible-content-collapsed, .ui-loader {
+	display: none;
+}
